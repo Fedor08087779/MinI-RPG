@@ -10,5 +10,9 @@ namespace mini_RPG
         public int HP;
         public int BaseDamage;
         public int RandomDamage;
+        public void RemainingHp()
+        {
+            Console.WriteLine($"Оставшееся HP: {HP}");
+        }
     }
 }

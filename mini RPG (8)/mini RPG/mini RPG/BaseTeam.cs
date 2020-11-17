@@ -7,6 +7,9 @@ namespace mini_RPG
     class BaseTeam
     {
         public string NameTeam;
-        public List<string> DeadTeam = new List<string>();
+        public void PrintName()
+        {
+            Console.Write($"Название команды: {NameTeam}");
+        }
     }
 }

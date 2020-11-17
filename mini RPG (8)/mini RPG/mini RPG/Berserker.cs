@@ -12,9 +12,6 @@ namespace mini_RPG
             HP = 550;
             BaseDamage = 50;
         }
-        public void RemainingHp()
-        {
-            Console.WriteLine($"Оставшееся HP: {HP}");
-        }
+       
     }
 }
