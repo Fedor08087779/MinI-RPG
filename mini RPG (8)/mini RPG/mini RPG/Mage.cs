@@ -10,6 +10,7 @@ namespace mini_RPG
             Name = "Маг";
             HP = 250;
             BaseDamage = 130;
+            Number = 5;
         }
        
     }

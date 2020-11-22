@@ -11,15 +11,16 @@ namespace mini_RPG
         public int HP;
         public int BaseDamage;
         public int RandomDamage;
+        public int Number;
         public void PrintInfo()
         {
             if (HP > 0)
             {
-                Console.WriteLine($". {Name} ({HP} HP), урон: {BaseDamage}");
+                Console.WriteLine($"{Number}.{Name} - {HP} HP, урон: {BaseDamage}");
             }
             else
             {
-                Console.WriteLine($". {Name} ({HP} HP), урон: {BaseDamage} - [Убит]");
+                Console.WriteLine($"{Number}.{Name} - {HP} HP, урон: {BaseDamage} - [Убит]");
             }
         }
         public int CalculateDamage()

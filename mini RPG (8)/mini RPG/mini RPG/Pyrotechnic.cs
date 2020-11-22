@@ -11,6 +11,7 @@ namespace mini_RPG
             Name = "Пиротехник";
             HP = 130;
             BaseDamage = 200;
+            Number = 6;
         }
         
     }

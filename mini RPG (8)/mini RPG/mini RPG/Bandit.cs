@@ -11,6 +11,7 @@ namespace mini_RPG
             Name = "Бандит";
             HP = 320;
             BaseDamage = 90;
+            Number = 1;
         }
         
     }

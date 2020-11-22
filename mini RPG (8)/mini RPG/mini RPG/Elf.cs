@@ -11,6 +11,7 @@ namespace mini_RPG
             Name = "Ельф";
             HP = 280;
             BaseDamage = 120;
+            Number = 4;
         }
         
     }

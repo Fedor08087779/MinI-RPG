@@ -11,6 +11,7 @@ namespace mini_RPG
             Name = "Воин";
             HP = 450;
             BaseDamage = 85;
+            Number = 8;
         }
         
     }

@@ -11,6 +11,7 @@ namespace mini_RPG
             Name = "Самурай";
             HP = 500;
             BaseDamage = 70;
+            Number = 7;
         }
         
     }

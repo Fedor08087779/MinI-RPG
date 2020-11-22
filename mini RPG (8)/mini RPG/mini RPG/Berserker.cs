@@ -11,6 +11,7 @@ namespace mini_RPG
             Name = "Берсерк";
             HP = 550;
             BaseDamage = 50;
+            Number = 2;
         }
        
     }

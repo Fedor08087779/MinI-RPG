@@ -4,25 +4,13 @@ using System.Text;
 
 namespace mini_RPG
 {
-    class BaseTeam
+    class BaseTeam:BaseHeroes
     {
         public string NameTeam;
+        public int NumberHeroes;
         public void PrintName()
         {
             Console.Write($"Название команды: {NameTeam}");
-        }
-        public int ManyHeroes()
-        {
-            Console.Write("Сколько будет героев в твоей команде(1-8): ");
-            string input = Console.ReadLine();
-            int.TryParse(input, out int NumberHeroes);
-            while (NumberHeroes > 8)
-            {
-                Console.WriteLine("Сколько персов будет в вашей команде (1-8!!!): ");
-                input = Console.ReadLine();
-                int.TryParse(input, out NumberHeroes);
-            }
-            return NumberHeroes;
-        }
+        }        
     }
 }
