@@ -4,8 +4,8 @@ using System.Text;
 
 namespace mini_RPG
 {
-    class TeamPlayer:BaseTeam
+    class TeamPlayer : BaseTeam
     {
-        
+       
     }
 }
