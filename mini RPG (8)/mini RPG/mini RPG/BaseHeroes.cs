@@ -7,23 +7,28 @@ namespace mini_RPG
     class BaseHeroes
     {
         Random generator = new Random();
-        public string Name;
-        public int HP;
-        public int BaseDamage;
-        public int RandomDamage;
-        public int Number;
+        public string Name { get;  set; }
+        public int HP { get;  set; }
+        public int BaseDamage { get;  set; }
+        public int RandomDamage { get;  set; }
+        public BaseHeroes(string name, int hp, int baseDamage)
+        {
+            Name = name;
+            HP = hp;
+            BaseDamage = baseDamage;
+        }
         public void PrintInfo()
         {
             if (HP > 0)
             {
-                Console.WriteLine($"{Number}.{Name} - {HP} HP, урон: {BaseDamage}");
+                Console.WriteLine($"{Name} - {HP} HP, урон: {BaseDamage}");
             }
             else
             {
-                Console.WriteLine($"{Number}.{Name} - {HP} HP, урон: {BaseDamage} - [Убит]");
+                Console.WriteLine($"{Name} - {HP} HP, урон: {BaseDamage} - [Убит]");
             }
         }
-        public int CalculateDamage()
+        public int CountDamage()
         {
             int calculateDamage = generator.Next(BaseDamage / 4 * 3, BaseDamage / 4 * 5);
             return calculateDamage;

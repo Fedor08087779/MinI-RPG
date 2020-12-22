@@ -6,12 +6,11 @@ namespace mini_RPG
 {
     class Berserker : BaseHeroes
     {
-        public Berserker()
+        public Berserker(string name, int hp, int baseDamage) : base(name, hp, baseDamage)
         {
             Name = "Берсерк";
             HP = 550;
             BaseDamage = 50;
-            Number = 2;
         }
        
     }

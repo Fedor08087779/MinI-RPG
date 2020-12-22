@@ -5,12 +5,11 @@ namespace mini_RPG
 {
     class Mage:BaseHeroes
     {
-        public Mage()
+        public Mage(string name, int hp, int baseDamage) : base(name, hp, baseDamage)
         {
             Name = "Маг";
             HP = 250;
             BaseDamage = 130;
-            Number = 5;
         }
        
     }

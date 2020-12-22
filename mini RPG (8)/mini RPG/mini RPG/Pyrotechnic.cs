@@ -6,12 +6,11 @@ namespace mini_RPG
 {
     class Pyrotechnic : BaseHeroes
     {
-        public Pyrotechnic()
+        public Pyrotechnic(string name, int hp, int baseDamage) : base(name, hp, baseDamage)
         {
             Name = "Пиротехник";
             HP = 130;
             BaseDamage = 200;
-            Number = 6;
         }
         
     }

@@ -6,12 +6,11 @@ namespace mini_RPG
 {
     class Bandit:BaseHeroes
     {
-        public Bandit()
+        public Bandit(string name, int hp, int baseDamage) : base (name, hp, baseDamage)
         {
             Name = "Бандит";
             HP = 320;
             BaseDamage = 90;
-            Number = 1;
         }
         
     }

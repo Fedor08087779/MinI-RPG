@@ -6,12 +6,22 @@ namespace mini_RPG
 {
     class BaseGame
     {
-        public int whomAttackPlayer;
-        public int whoAttackPlayes;
-        public int whomAttackBot;
-        public int whoAttackBot;
-        public bool inGame;
-        BaseTeam baseTeam = new BaseTeam();
+        public int whomAttackPlayer { get; private set; }
+        public int whoAttackPlayes { get; private set; }
+        public int whomAttackBot { get; private set; }
+        public int whoAttackBot { get; private set; }
+        public bool inGame { get; private set; }
+
+        Bandit bandit = new Bandit("Бандит", 320, 90);
+        Berserker berserker = new Berserker("Берсерк", 550, 50);
+        Druid druid = new Druid("Друид", 350, 110);
+        Elf elf = new Elf("Ельф", 280, 120);
+        Mage mage = new Mage("Маг", 250, 130);
+        Pyrotechnic pyrotechnic = new Pyrotechnic("Пиротехник", 130, 200);
+        Samurai samurai = new Samurai("Самурай", 500, 70);
+        Warrior warrior = new Warrior("Воин", 450, 85);
+        BaseTeam baseTeam = new BaseTeam(0,null);
+      
         public void TeamName()
         {
             Console.Write("Введите название команды: ");
@@ -20,11 +30,16 @@ namespace mini_RPG
         public void NumberOfHeroes()
         {
             Console.Write("Сколько будет героев в твоей команде(1-8): ");
-            string input = Console.ReadLine();
-            int.TryParse(input, out baseTeam.NumberHeroes);
+            int.TryParse(Console.ReadLine(), out baseTeam.NumberHeroes);
+            while (baseTeam.NumberHeroes > 8 || baseTeam.NumberHeroes < 0)
+            {
+                Console.Write("Сколько будет героев в твоей команде(1-8)!: ");
+                int.TryParse(Console.ReadLine(), out baseTeam.NumberHeroes);
+            }
         }
         public void CommandHeroes()
         {
+            List<BaseHeroes> Heroes = new List<BaseHeroes>() { bandit, berserker, druid, elf, mage, pyrotechnic, samurai, warrior };
             string input = null;
             int num = 0;
             int numHeroes;
@@ -32,13 +47,12 @@ namespace mini_RPG
             {
                 input = Console.ReadLine();
                 int.TryParse(input, out numHeroes);
-
                 if (numHeroes < 9)
                 {
-                    if (!baseTeam.ListHeroes.Contains(baseTeam.Heroes[numHeroes - 1]))
+                    if(!baseTeam.ListHeroes.Contains(Heroes[numHeroes - 1]))
                     {
-
-                        
+                        baseTeam.ListHeroes.Add(Heroes[numHeroes - 1]);
+                        num++;
                     }
                     else
                     {
@@ -54,20 +68,10 @@ namespace mini_RPG
         }
         public void StartGame()
         {
-            Bandit bandit = new Bandit();
-            Berserker berserker = new Berserker();
-            Druid druid = new Druid();
-            Elf elf = new Elf();
-            Mage mage = new Mage();
-            Pyrotechnic pyrotechnic = new Pyrotechnic();
-            Samurai samurai = new Samurai();
-            Warrior warrior = new Warrior();
+            
+
             TeamName();
-            NumberOfHeroes();      
-            while (baseTeam.NumberHeroes > 8||baseTeam.NumberHeroes < 0)
-            {
-                NumberOfHeroes();
-            }
+            NumberOfHeroes();          
             for (int i = 0; i < baseTeam.NumberHeroes; i++)
             {
                 Console.WriteLine("Введите номер персонажа которого хотите добавить в команду: ");
