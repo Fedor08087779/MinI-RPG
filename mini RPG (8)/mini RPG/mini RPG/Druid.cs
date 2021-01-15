@@ -8,10 +8,12 @@ namespace mini_RPG
     {
         public Druid(string name, int hp, int baseDamage) : base(name, hp, baseDamage)
         {
-            Name = "Друид";
-            HP = 350;
-            BaseDamage = 110;
+           
         }
-        
+        public Druid() : base("Друид", 350,110)
+        {
+
+        }
+
     }
 }

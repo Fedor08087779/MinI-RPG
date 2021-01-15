@@ -8,10 +8,11 @@ namespace mini_RPG
     {
         public Pyrotechnic(string name, int hp, int baseDamage) : base(name, hp, baseDamage)
         {
-            Name = "Пиротехник";
-            HP = 130;
-            BaseDamage = 200;
+            
         }
-        
+        public Pyrotechnic():base("Пиротехник", 130,200)
+        {
+
+        }
     }
 }

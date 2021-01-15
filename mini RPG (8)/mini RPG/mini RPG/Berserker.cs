@@ -8,10 +8,11 @@ namespace mini_RPG
     {
         public Berserker(string name, int hp, int baseDamage) : base(name, hp, baseDamage)
         {
-            Name = "Берсерк";
-            HP = 550;
-            BaseDamage = 50;
+
         }
-       
+        public Berserker() : base( "Берсерк", 550, 50 )
+        {
+
+        }     
     }
 }

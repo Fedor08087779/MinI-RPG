@@ -6,14 +6,13 @@ namespace mini_RPG
 {
     class InputOutput
     {
-        public char Value;
-        public void Output()
+        public void Output(string value)
         {
-            Console.Write(Value);
+            Console.Write(value);
         }
-        public void Input()
+        public string Input()
         {
-            Value = Console.ReadLine();
+            return Console.ReadLine();
         }
     }
 }

@@ -20,7 +20,8 @@ namespace mini_RPG
         Pyrotechnic pyrotechnic = new Pyrotechnic("Пиротехник", 130, 200);
         Samurai samurai = new Samurai("Самурай", 500, 70);
         Warrior warrior = new Warrior("Воин", 450, 85);
-        BaseTeam baseTeam = new BaseTeam(0,null);
+
+        BaseTeam baseTeam = new BaseTeam(0, null);
       
         public void TeamName()
         {
@@ -30,12 +31,8 @@ namespace mini_RPG
         public void NumberOfHeroes()
         {
             Console.Write("Сколько будет героев в твоей команде(1-8): ");
-            int.TryParse(Console.ReadLine(), out baseTeam.NumberHeroes);
-            while (baseTeam.NumberHeroes > 8 || baseTeam.NumberHeroes < 0)
-            {
-                Console.Write("Сколько будет героев в твоей команде(1-8)!: ");
-                int.TryParse(Console.ReadLine(), out baseTeam.NumberHeroes);
-            }
+            int.TryParse(Console.ReadLine(), out int num);
+            BaseTeam.NumberHeroes = num;
         }
         public void CommandHeroes()
         {

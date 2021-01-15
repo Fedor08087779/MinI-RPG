@@ -8,10 +8,11 @@ namespace mini_RPG
     {
         public Elf(string name, int hp, int baseDamage) : base(name, hp, baseDamage)
         {
-            Name = "Ельф";
-            HP = 280;
-            BaseDamage = 120;
+            
         }
-        
+        public  Elf () :base("Ельф", 280,120)
+        {
+
+        }
     }
 }

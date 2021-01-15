@@ -7,10 +7,11 @@ namespace mini_RPG
     {
         public Mage(string name, int hp, int baseDamage) : base(name, hp, baseDamage)
         {
-            Name = "Маг";
-            HP = 250;
-            BaseDamage = 130;
+           
         }
-       
+       public Mage() : base("Маг", 250,130)
+        {
+
+        }
     }
 }

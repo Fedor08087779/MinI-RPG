@@ -8,10 +8,11 @@ namespace mini_RPG
     {
         public Warrior(string name, int hp, int baseDamage) : base(name, hp, baseDamage)
         {
-            Name = "Воин";
-            HP = 450;
-            BaseDamage = 85;
+            
         }
-        
+        public Warrior():base("Воин", 450,85)
+        {
+
+        }
     }
 }

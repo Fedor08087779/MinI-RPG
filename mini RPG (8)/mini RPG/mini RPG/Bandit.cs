@@ -8,9 +8,11 @@ namespace mini_RPG
     {
         public Bandit(string name, int hp, int baseDamage) : base (name, hp, baseDamage)
         {
-            Name = "Бандит";
-            HP = 320;
-            BaseDamage = 90;
+           
+        }
+        public Bandit() : base ("Бандит", 320,90)
+        {
+
         }
         
     }

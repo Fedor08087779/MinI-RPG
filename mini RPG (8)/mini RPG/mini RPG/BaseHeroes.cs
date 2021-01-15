@@ -9,8 +9,8 @@ namespace mini_RPG
         Random generator = new Random();
         public string Name { get;  set; }
         public int HP { get;  set; }
-        public int BaseDamage { get;  set; }
-        public int RandomDamage { get;  set; }
+        public int BaseDamage { get; private set; }
+
         public BaseHeroes(string name, int hp, int baseDamage)
         {
             Name = name;
