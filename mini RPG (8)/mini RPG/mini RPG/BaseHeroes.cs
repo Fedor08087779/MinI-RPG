@@ -6,7 +6,12 @@ namespace mini_RPG
 {
     class BaseHeroes
     {
-        Random generator = new Random();
+        Random generator = Random.GetRandom();
+        public Random Random { get; set; }
+        public void RandomNumber()
+        {
+            Random = Random.GetRandom();
+        }
         public string Name { get;  set; }
         public int HP { get;  set; }
         public int BaseDamage { get; private set; }

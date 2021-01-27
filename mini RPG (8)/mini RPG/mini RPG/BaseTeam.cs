@@ -14,6 +14,7 @@ namespace mini_RPG
         public string NameTeam { get; set; }
         private int _numberHeroes;
         private int _numHeroe;
+        public BaseHeroes BaseHeroes { get; set; }
         Bandit bandit = new Bandit("Бандит", 320, 90);
         Berserker berserker = new Berserker("Берсерк", 550, 50);
         Druid druid = new Druid("Друид", 350, 110);
@@ -22,7 +23,7 @@ namespace mini_RPG
         Pyrotechnic pyrotechnic = new Pyrotechnic("Пиротехник", 130, 200);
         Samurai samurai = new Samurai("Самурай", 500, 70);
         Warrior warrior = new Warrior("Воин", 450, 85);
-        public List<BaseHeroes> ListHeroes {get; private set;}
+        protected List<BaseHeroes> ListHeroes {get; private set;}
         public int NumberHeroes
         {
             get
@@ -67,45 +68,41 @@ namespace mini_RPG
                 }
             }
         }
-        public void PrintName()
+        public void PrintTeamName(string NameTeam)
         {
             Console.Write($"Название команды: {NameTeam}");
         }   
-        public void AddHeroe()
+        public void AddBandit(Bandit bandit)
         {
-            switch(numHeroe)
-            {
-                case 0:
-                    ListHeroes.Add(bandit);
-                    break;
-                case 1:
-                    ListHeroes.Add(berserker);
-                    break;
-                case 2:
-                    ListHeroes.Add(druid);
-                    break;
-                case 3:
-                    ListHeroes.Add(elf);
-                    break;
-                case 4:
-                    ListHeroes.Add(mage);
-                    break;
-                case 5:
-                    ListHeroes.Add(pyrotechnic);
-                    break;
-                case 6:
-                    ListHeroes.Add(samurai);
-                    break;
-                case 7:
-                    ListHeroes.Add(warrior);
-                    break;
-            }
-
-
-
-
-
-
+            ListHeroes.Add(bandit);
+        }
+        public void AddBerserker(Berserker berserker)
+        {
+            ListHeroes.Add(berserker);
+        }
+        public void AddDruid(Druid druid)
+        {
+            ListHeroes.Add(druid);
+        }
+        public void AddElf(Elf elf)
+        {
+            ListHeroes.Add(elf);
+        }
+        public void AddMage(Mage mage)
+        {
+            ListHeroes.Add(mage);
+        }
+        public void AddPyrotechnic(Pyrotechnic pyrotechnic)
+        {
+            ListHeroes.Add(pyrotechnic);
+        }
+        public void AddSamurai(Samurai samurai)
+        {
+            ListHeroes.Add(samurai);
+        }
+        public void AddWarrior(Warrior warrior)
+        {
+            ListHeroes.Add(warrior);
         }
     }
 }
