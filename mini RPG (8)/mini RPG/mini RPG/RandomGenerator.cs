@@ -4,11 +4,11 @@ using System.Text;
 
 namespace mini_RPG
 {
-    class Random
+    class RandomGenerator
     {
         private static Random random;
         public Random Number { get; private set; }
-        private Random()
+        private RandomGenerator()
         {
             Number = new Random();
         }

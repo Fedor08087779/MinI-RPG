@@ -7,19 +7,26 @@ namespace mini_RPG
     class Singleton
     {
         private static Singleton random;
-        private Singleton()
+        Random generator = new Random();
+        Singleton singleton = new Singleton(0, 0);
+        public int fromNumber { get; set; }
+        public int beforeNumber { get; set; }
+        private Singleton(int _fromNumber,int  _beforeNumber)
         {
+            fromNumber = _fromNumber;
+            beforeNumber = _beforeNumber;
         }
         public Random Random { get; set; }
-        public static Singleton getRandom()
+        public static Singleton GetRandom()
         {
             if (random == null)
-                random = new Singleton();
+                random = new Singleton(0,0);
             return random;
         }
-        public void RandomNumber()
+        public int RandomNumber()
         {
-            int calculationNumber = random.Next();
+            int calculationNumber = generator.Next(fromNumber, beforeNumber);
+            return calculationNumber;
         }
     }
 }

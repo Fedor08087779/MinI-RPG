@@ -14,6 +14,7 @@ namespace mini_RPG
         public string NameTeam { get; set; }
         private int _numberHeroes;
         private int _numHeroe;
+        InputOutput inputOutput = InputOutput.getInstance();
         public BaseHeroes BaseHeroes { get; set; }
         Bandit bandit = new Bandit("Бандит", 320, 90);
         Berserker berserker = new Berserker("Берсерк", 550, 50);
@@ -70,7 +71,7 @@ namespace mini_RPG
         }
         public void PrintTeamName(string NameTeam)
         {
-            Console.Write($"Название команды: {NameTeam}");
+            inputOutput.Output($"Название команды: {NameTeam}");
         }   
         public void AddBandit(Bandit bandit)
         {

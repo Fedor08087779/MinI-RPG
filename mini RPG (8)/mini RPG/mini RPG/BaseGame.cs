@@ -11,7 +11,7 @@ namespace mini_RPG
         public int whomAttackBot { get; private set; }
         public int whoAttackBot { get; private set; }
         public bool inGame { get; private set; }
-
+        InputOutput inputOutput = InputOutput.getInstance();
         Bandit bandit = new Bandit("Бандит", 320, 90);
         Berserker berserker = new Berserker("Берсерк", 550, 50);
         Druid druid = new Druid("Друид", 350, 110);
@@ -20,18 +20,16 @@ namespace mini_RPG
         Pyrotechnic pyrotechnic = new Pyrotechnic("Пиротехник", 130, 200);
         Samurai samurai = new Samurai("Самурай", 500, 70);
         Warrior warrior = new Warrior("Воин", 450, 85);
-
-        BaseTeam baseTeam = new BaseTeam(0, null);
-      
+        BaseTeam baseTeam = new BaseTeam(0, null);   
         public void TeamName()
         {
-            Console.Write("Введите название команды: ");
-            baseTeam.NameTeam = Console.ReadLine();
+            inputOutput.Output("Введите название команды: ");
+            baseTeam.NameTeam = inputOutput.Input();
         }
         public void NumberOfHeroes()
         {
-            Console.Write("Сколько будет героев в твоей команде(1-8): ");
-            int.TryParse(Console.ReadLine(), out int num);
+            inputOutput.Output("Сколько будет героев в твоей команде(1-8): ");
+            int.TryParse(inputOutput.Input(), out int num);
             BaseTeam.NumberHeroes = num;
         }
         public void CommandHeroes()
@@ -42,7 +40,7 @@ namespace mini_RPG
             int numHeroes;
             while (num != baseTeam.NumberHeroes)
             {
-                input = Console.ReadLine();
+                input = inputOutput.Input();
                 int.TryParse(input, out numHeroes);
                 if (numHeroes < 9)
                 {
@@ -53,25 +51,23 @@ namespace mini_RPG
                     }
                     else
                     {
-                        Console.WriteLine("Нельзя выбирать одного и того же перса несколько раз");
+                        inputOutput.Output("Нельзя выбирать одного и того же перса несколько раз");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Укажите номера персов которых вы хотите добавить себе в команду (НЕ БОЛЬШЕ 8): ");
+                    inputOutput.Output("Укажите номера персов которых вы хотите добавить себе в команду (НЕ БОЛЬШЕ 8): ");
 
                 }
             }
         }
         public void StartGame()
-        {
-            
-
+        {            
             TeamName();
             NumberOfHeroes();          
             for (int i = 0; i < baseTeam.NumberHeroes; i++)
             {
-                Console.WriteLine("Введите номер персонажа которого хотите добавить в команду: ");
+                inputOutput.Output("Введите номер персонажа которого хотите добавить в команду: ");
                 bandit.PrintInfo();
                 berserker.PrintInfo();
                 druid.PrintInfo();
